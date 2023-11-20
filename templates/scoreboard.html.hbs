@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/simple.css">
+        <title>scoreboard</title>
+    </head>
+    <body>
+        <header>
+            <h1>scoreboard</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">submit flag</a></li>
+                    <li><a href="/scoreboard" class="current">scoreboard</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h2>scoreboard</h2>
+            <table style="margin-left: auto; margin-right: auto;">
+                <thead>
+                    <tr>
+                        <th>rank</th>
+                        <th>username</th>
+                        <th>flags</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each scores}}
+                    <tr>
+                        <td>{{ this.rank }}</td>
+                        <td>{{ this.name }}</td>
+                        <td>
+                            <span style="visibility: {{#if this.flag1}}visible{{else}}hidden{{/if}};">1</span>
+                            <span style="visibility: {{#if this.flag2}}visible{{else}}hidden{{/if}};">2</span>
+                            <span style="visibility: {{#if this.flag3}}visible{{else}}hidden{{/if}};">3</span>
+                            <span style="visibility: {{#if this.flag4}}visible{{else}}hidden{{/if}};">4</span>
+                            <span style="visibility: {{#if this.flag5}}visible{{else}}hidden{{/if}};">5</span>
+                            <span style="visibility: {{#if this.flag6}}visible{{else}}hidden{{/if}};">6</span>
+                            <span style="visibility: {{#if this.flag7}}visible{{else}}hidden{{/if}};">7</span>
+                            <span style="visibility: {{#if this.flag8}}visible{{else}}hidden{{/if}};">8</span>
+                            <span style="visibility: {{#if this.flag9}}visible{{else}}hidden{{/if}};">9</span>
+                            <span style="visibility: {{#if this.flag10}}visible{{else}}hidden{{/if}};">10</span>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </main>
+    </body>
+</html>
