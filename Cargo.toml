@@ -1,8 +1,8 @@
 [package]
 name = "scoreboard"
-version = "0.3.0"
+version = "0.4.0"
 authors = ["zuyoutoki"]
-rust-version = "1.72.1"
+rust-version = "1.74.0"
 description = "a simple scoreboard for ctf events"
 publish = false
 edition = "2021"

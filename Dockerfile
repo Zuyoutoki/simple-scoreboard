@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM rust:1.72-alpine as builder
+FROM rust:1.74-alpine as builder
 RUN USER=root cargo new --bin scoreboard
 WORKDIR ./scoreboard
 RUN apk update && apk add --no-cache musl-dev && rm -rf /var/cache/apk/*
