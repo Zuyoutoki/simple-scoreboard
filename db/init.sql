@@ -14,13 +14,6 @@ CREATE TABLE submissions (
 -- Insert flags
 INSERT INTO challenges (flag)
 VALUES
-    ('FLAG-SecureSHip'),
-    ('FLAG-ImNotTheCaptainYet'),
-    ('FLAG-UnSecretEnArgument'),
-    ('FLAG-SSHPortForwardingSavesLives'),
-    ('FLAG-EscapeSequences'),
-    ('FLAG-InsecureDirectObjectReferences'),
-    ('FLAG-LookForSourceCode'),
-    ('FLAG-ThereOnceWasAShipThatPutToSea'),
-    ('FLAG-DumpingTheWholeDatabaseIsAnOption'),
-    ('FLAG-LotsOfTreasuresAndRiches');
+    ('FLAG-First'),
+    ('FLAG-Second'),
+    ('FLAG-Third');

@@ -32,21 +32,17 @@
                         <td>{{#plus-one @index}}{{/plus-one}}</td>
                         <td>{{score.user}}</td>
                         <td>
-                            <span style="visibility: {{#if (contains 1 score.flags)}}visible{{else}}hidden{{/if}};">1</span>
-                            <span style="visibility: {{#if (contains 2 score.flags)}}visible{{else}}hidden{{/if}};">2</span>
-                            <span style="visibility: {{#if (contains 3 score.flags)}}visible{{else}}hidden{{/if}};">3</span>
-                            <span style="visibility: {{#if (contains 4 score.flags)}}visible{{else}}hidden{{/if}};">4</span>
-                            <span style="visibility: {{#if (contains 5 score.flags)}}visible{{else}}hidden{{/if}};">5</span>
-                            <span style="visibility: {{#if (contains 6 score.flags)}}visible{{else}}hidden{{/if}};">6</span>
-                            <span style="visibility: {{#if (contains 7 score.flags)}}visible{{else}}hidden{{/if}};">7</span>
-                            <span style="visibility: {{#if (contains 8 score.flags)}}visible{{else}}hidden{{/if}};">8</span>
-                            <span style="visibility: {{#if (contains 9 score.flags)}}visible{{else}}hidden{{/if}};">9</span>
-                            <span style="visibility: {{#if (contains 10 score.flags)}}visible{{else}}hidden{{/if}};">10</span>
+                            {{#each ../chals as |chal|}}
+                            <span style="visibility: {{#if (contains chal.id score.flags)}}visible{{else}}hidden{{/if}};">{{chal.id}}</span>
+                            {{/each}}
                         </td>
                     </tr>
                     {{/each}}
                 </tbody>
             </table>
         </main>
+        <footer>
+            <small><a href="https://github.com/zuyoutoki/simple-scoreboard">simple-scoreboard</a></small>
+        </footer>
     </body>
 </html>

@@ -21,9 +21,10 @@ pub enum DatabaseError {}
 
 pub mod challenges {
     use crate::database::POOL;
+    use serde::Serialize;
     use sqlx::FromRow;
 
-    #[derive(FromRow)]
+    #[derive(FromRow, Serialize)]
     pub struct Challenge {
         pub id: Option<i64>,
         pub flag: Option<String>,
@@ -48,6 +49,27 @@ pub mod challenges {
         )
         .bind(flag)
         .fetch_optional(&mut *conn)
+        .await
+        .unwrap()
+    }
+
+    pub async fn list() -> Vec<Challenge> {
+        let mut conn = unsafe { &mut POOL }
+            .get_pool()
+            .await
+            .unwrap()
+            .acquire()
+            .await
+            .unwrap();
+
+        sqlx::query_as::<_, Challenge>(
+            r#"
+                SELECT id, flag
+                FROM challenges
+                ORDER BY id;
+            "#,
+        )
+        .fetch_all(&mut *conn)
         .await
         .unwrap()
     }
