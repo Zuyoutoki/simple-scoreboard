@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/simple.css">
+        <link rel="stylesheet" href="https://unpkg.com/simpledotcss/simple.min.css">
         <title>scoreboard</title>
     </head>
     <body>
@@ -27,21 +27,21 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {{#each scores}}
+                    {{#each scores as |score|}}
                     <tr>
-                        <td>{{ this.rank }}</td>
-                        <td>{{ this.name }}</td>
+                        <td>{{#plus-one @index}}{{/plus-one}}</td>
+                        <td>{{score.user}}</td>
                         <td>
-                            <span style="visibility: {{#if this.flag1}}visible{{else}}hidden{{/if}};">1</span>
-                            <span style="visibility: {{#if this.flag2}}visible{{else}}hidden{{/if}};">2</span>
-                            <span style="visibility: {{#if this.flag3}}visible{{else}}hidden{{/if}};">3</span>
-                            <span style="visibility: {{#if this.flag4}}visible{{else}}hidden{{/if}};">4</span>
-                            <span style="visibility: {{#if this.flag5}}visible{{else}}hidden{{/if}};">5</span>
-                            <span style="visibility: {{#if this.flag6}}visible{{else}}hidden{{/if}};">6</span>
-                            <span style="visibility: {{#if this.flag7}}visible{{else}}hidden{{/if}};">7</span>
-                            <span style="visibility: {{#if this.flag8}}visible{{else}}hidden{{/if}};">8</span>
-                            <span style="visibility: {{#if this.flag9}}visible{{else}}hidden{{/if}};">9</span>
-                            <span style="visibility: {{#if this.flag10}}visible{{else}}hidden{{/if}};">10</span>
+                            <span style="visibility: {{#if (contains 1 score.flags)}}visible{{else}}hidden{{/if}};">1</span>
+                            <span style="visibility: {{#if (contains 2 score.flags)}}visible{{else}}hidden{{/if}};">2</span>
+                            <span style="visibility: {{#if (contains 3 score.flags)}}visible{{else}}hidden{{/if}};">3</span>
+                            <span style="visibility: {{#if (contains 4 score.flags)}}visible{{else}}hidden{{/if}};">4</span>
+                            <span style="visibility: {{#if (contains 5 score.flags)}}visible{{else}}hidden{{/if}};">5</span>
+                            <span style="visibility: {{#if (contains 6 score.flags)}}visible{{else}}hidden{{/if}};">6</span>
+                            <span style="visibility: {{#if (contains 7 score.flags)}}visible{{else}}hidden{{/if}};">7</span>
+                            <span style="visibility: {{#if (contains 8 score.flags)}}visible{{else}}hidden{{/if}};">8</span>
+                            <span style="visibility: {{#if (contains 9 score.flags)}}visible{{else}}hidden{{/if}};">9</span>
+                            <span style="visibility: {{#if (contains 10 score.flags)}}visible{{else}}hidden{{/if}};">10</span>
                         </td>
                     </tr>
                     {{/each}}

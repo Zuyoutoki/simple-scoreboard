@@ -1,15 +1,33 @@
 [package]
 name = "scoreboard"
-version = "0.1.0"
+version = "0.2.0"
+authors = ["zuyoutoki"]
+rust-version = "1.72.1"
+description = "a simple scoreboard for ctf events"
+publish = false
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
-[dependencies]
-rocket = "=0.5.0-rc.4"
-sqlx = { version = "0.7", features = ["runtime-tokio", "sqlite"] }
-tokio = { version = "1", features = ["full"] }
+[dependencies.rocket]
+version = "=0.5.0"
+features = ["http2"]
 
 [dependencies.rocket_dyn_templates]
-version = "=0.1.0-rc.4"
+version = "=0.1.0"
 features = ["handlebars"]
+
+[dependencies.serde]
+version = "=1.0.193"
+features = ["std"]
+
+[dependencies.serde_json]
+version = "=1.0.108"
+features = ["std"]
+
+[dependencies.sqlx]
+version = "=0.7.2"
+features = ["runtime-tokio", "sqlite", "chrono"]
+
+[dependencies.chrono]
+version = "=0.4.31"
+features = ["serde"]
+
