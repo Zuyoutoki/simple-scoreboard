@@ -1,6 +1,6 @@
 [package]
 name = "scoreboard"
-version = "0.4.0"
+version = "0.4.1"
 authors = ["zuyoutoki"]
 rust-version = "1.74.0"
 description = "a simple scoreboard for ctf events"
